@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+ <head>
+    <title>遊☆戯☆王</title>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+  <link rel="stylesheet" href="Css.css" />
+   <link rel="stylesheet" href="Css2.css" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <style>
+  #result {
+   position: absolute;
+   width: 100%;
+   max-width:870px;
+   cursor: pointer;
+   overflow-y: auto;
+   max-height: 400px;
+   box-sizing: border-box;
+   z-index: 1001;
+  }
+  .link-class:hover{
+   background-color:#f1f1f1;
+  }
+  </style>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="Css.css" />
+    <title>遊☆戯☆王</title>
+    <!--引入应用程序清单文件-->
+    <link rel="manifest" href="manifest.json">
+    <!--引入字体文件 加入特殊字体  后期最好引入到css加入全局布局-->
+    <link href="https://fonts.googleapis.com/css?family=Sigmar+One&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Sigmar One', cursive;
+        }
+      </style>
+</head>
+
+<div class="topnav" >
+  <a href="index.html" style="color: rgb(3, 3, 3);" >HomePage</a>
+    <a href="TopnavP2.html" style="color: rgb(3, 3, 3);" >Card search</a>
+    <a href="TopnavP4.html" style="color: rgb(3, 3, 3);">Rule introduction</a>
+    <a href="https://play.google.com/store/apps/details?id=jp.konami.duellinks"style="color: rgb(3, 3, 3);">download "dual link"</a>
+  
+    <!--这边是body部分 我可能插入一个 文本框 或者 滚动行 -->
+  </div>
+  
+
+ </head>
+ <body  >
+
+ 
+  <br /><br />
+  <div class="container" style="width:900px;"  >
+   <h2 style =“ width：100％; height：100％”>COME TO SEARCH CARD?</h2>
+   <h3 style =“ width：100％; height：100％”>遊☆戯☆王</h3>   
+   <br /><br />
+   <div class="colum">
+   <div style ="width：100％; height：100％" >
+    <input type="text" name="search" id="search" placeholder="Search card Details" class="form-control"   />
+   </div>
+</div>
+   <ul class="list-group" id="result"></ul>
+   <br />
+  </div>
+
+<div class="solarsys" style ="width：100％; height：100％" >
+  <!--太阳-->
+  <div class='sun'></div>
+
+  <!--水星轨道-->
+  <div class='mercuryOrbit'></div>
+
+  <!--水星-->
+  <div class='mercury'></div>
+
+  <!--金星轨道-->
+  <div class='venusOrbit'></div>
+
+  <!--金星-->
+  <div class='venus'></div>
+
+  <!--地球轨道-->
+  <div class='earthOrbit'></div>
+
+  <!--地球-->
+  <div class='earth'></div>
+
+  <!--火星轨道-->
+  <div class='marsOrbit'></div>
+
+  <!--火星-->
+  <div class='mars'></div>
+
+  <!--木星轨道-->
+  <div class='jupiterOrbit'></div>
+
+  <!--木星-->
+  <div class='jupiter'></div>
+
+  <!--土星轨道-->
+  <div class='saturnOrbit'></div>
+
+  <!--土星-->
+  <div class='saturn'></div>
+
+  <!--天王星轨道-->
+  <div class='uranusOrbit'></div>
+
+  <!--天王星-->
+  <div class='uranus'></div>
+
+  <!--海王星轨道-->
+  <div class='neptuneOrbit'></div>
+
+  <!--海王星-->
+  <div class='neptune'></div>
+</div>
+
+  
+ </body>
+</html>
+
+<script>
+  //使用ajax技术来获取数据 并且不会刷新整个页面
+$(document).ready(function(){
+ $.ajaxSetup({ cache: false });
+ $('#search').keyup(function(){
+  $('#result').html('');
+  $('#state').val('');
+  var searchField = $('#search').val();
+  var expression = new RegExp(searchField, "i");
+  $.getJSON('carddata.json', function(data) {
+   $.each(data, function(key, value){
+    if (value.name.search(expression) != -1 || value.location.search(expression) != -1)
+    {
+     $('#result').append('<li class="list-group-item link-class" ><img src="'+value.image+'" height="40" width="40" class="img-thumbnail" /> '+value.name+' | <span class="text-muted" >'+value.location+'</span></li>');
+    }
+   });   
+  });
+ });
+ 
+ $('#result').on('click', 'li', function() {
+  var click_text = $(this).text().split('|');
+  $('#search').val($.trim(click_text[0]));
+  $("#result").html('');
+ });
+});
+</script>

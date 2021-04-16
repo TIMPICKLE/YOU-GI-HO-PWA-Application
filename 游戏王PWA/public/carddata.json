@@ -1,0 +1,47 @@
+[
+    {
+     "name":"CYBERNETIC HORIZON",
+     "image": "images/cyber.png",
+     "location":"The name of this card is used as an ‘electronic dragon’ as long as it is on the field or in the graveyard. "
+    },
+    {
+      "name":"Black magic",
+      "image": "images/2.png",
+      "location":"Monster"
+    },
+    {
+      "name":"Sin blue eyes dragon",
+      "image": "images/1.png",
+      "location":"This card cannot be Normal Summoned. This card can be Special Summoned if you remove 1 Blue Eyed White Dragon from the deck."
+    },
+    {
+      "name":"Red-Eyes Spirit",
+      "image": "images/1.png",
+      "location":"Activate only by targeting a True Red Eyed monster in your Graveyard. That monster is special summoned."
+    },
+    {
+      "name":"SAVAGE STRIKE",
+      "image": " images/SAVAGESTRIKE.png",
+      "location":""
+    },
+    {
+      "name":"Red-Eyes Darkness Dragon",
+      "image": "images/Red-EyesDarkness Dragon.png",
+      "location":"This card cannot be summoned normally. Only when one ‘true red-eyed black dragon’ exists on the field can he be specially summoned. This card increases the damage per 300 dragon monsters in your graveyard."
+    },
+    {
+      "name":"Red-Eyes Fusion",
+      "image": "images/Red-EyesFusion.png",
+      "location":"During this card's turn, you cannot summon a monster outside of the effects of this card. : from their own hand card, card group, the fusion of the fusion material from the fusion monster card decided to send to the graveyard, the ‘true red eye’ monster as the fusion material of the 1 fusion monster from the additional card group fusion call. This special summoned monster's card name is used as ‘true red-eyed black dragon’."
+    },
+    {
+      "name":"Return of the Red-Eyes",
+      "image": "images/ReturnoftheRed-Eyes.png",
+      "location":"If you have a ‘true red eye’ monster on your field, use your graveyard as an object to activate this effect. That monster has a special call."
+    },
+    {
+      "name":"Photon Caesar",
+      "image": "images/PhotonCaesar.png",
+      "location":"This card summons · when the reverse summons is successful, you can summon a photonic emperor from your own hand card group."
+    }
+  ]

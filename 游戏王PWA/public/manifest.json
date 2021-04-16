@@ -1,0 +1,19 @@
+{
+    "name": "card search",
+    "short_name":"Card power",
+    "start_url":"/index.html",
+    "icons":[
+        {
+            "src":"images/icon.png",
+            "sizes":"144*144",
+            "type": "image/png"
+          
+
+        }
+    ],
+    "background_color":"skyblue",
+    "theme_color":"black",
+    "display":"standalone"
+    
+    
+}
